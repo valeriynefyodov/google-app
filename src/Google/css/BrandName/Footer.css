@@ -1,0 +1,15 @@
+.brandname-footer {
+    height: 335px;
+    min-width: 1500px;
+    background-color: #393939;
+    padding-top: 80px;
+}
+
+.brandname-footer__copyright {
+    text-align: center;
+    color: #a6a6a6;
+    font-family: Lato;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+}

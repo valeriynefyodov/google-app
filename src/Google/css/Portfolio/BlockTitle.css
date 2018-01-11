@@ -1,0 +1,23 @@
+.block-title {
+    text-align: center;
+}
+
+.block-title__main {
+    font-family: FiraSans;
+    font-weight: 500;
+    font-size: 42px;
+    color: #212121;
+    line-height: 28px;
+    transform: scaleX(1.006);
+}
+
+.block-title__subtitle {
+    font-family: FiraSans;
+    font-weight: 300;
+    font-size: 21px;
+    color: #727272;
+    line-height: 28px;
+    transform: scaleX(1.006);
+    margin-top: 20px;
+    margin-bottom: 45px;
+}

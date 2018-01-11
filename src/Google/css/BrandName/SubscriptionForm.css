@@ -1,0 +1,116 @@
+.brandname-subscription-form {
+    padding-top: 60px;
+    overflow: hidden;
+    float: right;
+    position: relative;
+    margin-right: 222px
+}
+
+.brandname-subscription-form__name {
+    width: 203px;
+    height: 60px;
+    border: 2px solid #e19646;
+    border-right: 1px solid #e4e4e4;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    padding-left: 32px;
+}
+
+.brandname-subscription-form__email {
+    width: 173px;
+    height: 60px;
+    border: 2px solid #e19646;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    border-left: none;
+    padding-right: 160px;
+    padding-left: 32px;
+}
+
+.brandname-subscription-form__name,
+.brandname-subscription-form__email {
+    color: #909090;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 48px;
+}
+
+.brandname-subscription-form__name::placeholder,
+.brandname-subscription-form__email::placeholder {
+    color: #e4e4e4;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 48px;
+}
+
+.brandname-subscription-form__name::-moz-placeholder,
+.brandname-subscription-form__email::-moz-placeholder {
+    color: #e4e4e4;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 60px;
+}
+
+.brandname-subscription-form__name::-webkit-input-placeholder,
+.brandname-subscription-form__email::-webkit-input-placeholder {
+    color: #e4e4e4;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 48px;
+}
+
+.brandname-subscription-form__name:-ms-input-placeholder,
+.brandname-subscription-form__email:-ms-input-placeholder {
+    color: #e4e4e4;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 48px;
+}
+
+.brandname-subscription-form__name:focus,
+.brandname-subscription-form__email:focus,
+.brandname-subscription-form__button:focus {
+    outline: none;
+}
+
+.brandname-subscription-form__email:invalid {
+    background-color: coral;
+}
+
+.brandname-subscription-form__button {
+    /* shape */
+    width: 150px;
+    height: 40px;
+    background-color: #575451;
+    position: absolute;
+    top: 72px;
+    right: 10px;
+    border-radius: 40px;
+    border: none;
+    transition: background 0.5s, box-shadow 0.2s;
+    -moz-transition: background 0.5s, box-shadow 0.2s;
+    -weblit-transition: background 0.5s, box-shadow 0.2s;
+    -o-transition: background 0.5s, box-shadow 0.2s;
+
+    /* text */
+    color: #fdfdfd;
+    font-family: Lato;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.brandname-subscription-form__button:hover {
+    background-color: #eca151;
+}
+
+.brandname-subscription-form__button:active {
+    box-shadow: inset 0 0 10px #575451
+}

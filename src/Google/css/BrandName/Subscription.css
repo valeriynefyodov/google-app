@@ -1,0 +1,14 @@
+.brandname-subscription {
+    background-image: url('../../img/BrandName/subscribe_background.png');
+}
+
+.brandname-subscription__title {
+    color: #ffffff;
+    width: 325px;
+    font-size: 35px;
+    line-height: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    float: left;
+    margin-left: 219px;
+}

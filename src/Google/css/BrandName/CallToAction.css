@@ -1,0 +1,61 @@
+.brandname-call-to-action {
+    background-color: #f7f7f7;
+}
+
+.brandname-call-to-action__browser-image {
+    float: left;
+    margin-left: 114px;
+    margin-top: 62px;
+    margin-right: -50px;
+}
+
+.brandname-call-to-action__text {
+    width: 575px;
+    font-family: Lato;
+    font-weight: 400;
+    line-height: 25px;
+    font-size: 16px;
+    color: #7e7e7e;
+    overflow: hidden;
+    margin-top: 32px;
+}
+
+.brandname-call-to-action__button {
+    /* shape */
+    width: 220px;
+    height: 50px;
+    background-color: #eca151;
+    box-shadow: 0 3px 0 #cd8436;
+    border: 3px solid transparent;
+    cursor: pointer;
+    margin-top: 47px;
+    transition: border-radius 0.5s, box-shadow 0.5s, background 0.2s;
+    -moz-transition: border-radius 0.5s, box-shadow 0.5s, background 0.2s;
+    -weblit-transition: border-radius 0.5s, box-shadow 0.5s, background 0.2s;
+    -o-transition: border-radius 0.5s, box-shadow 0.5s, background 0.2s;
+
+    /* text */
+    font-family: Lato;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.brandname-call-to-action__button:hover {
+    border-radius: 50px;
+    box-shadow: none;
+}
+
+.brandname-call-to-action__button:active {
+    background-color: #cd8436;
+}
+
+.brandname-call-to-action__button:focus {
+    outline: none;
+}
+
+.brandname-call-to-action__title {
+    line-height: 20px;
+    padding-top: 120px;
+}

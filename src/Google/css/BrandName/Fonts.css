@@ -1,0 +1,47 @@
+@font-face {
+    font-family: ChampLim;
+    src: url("../../fonts/CL/CLReg.eot");
+    src: url("../../fonts/CL/CLReg.eot?#iefix") format("embedded-opentype"), url("../../fonts/CL/CLReg.woff") format("woff"), url("../../fonts/CL/CLReg.ttf") format("truetype"), url("../../fonts/CL/CLReg.svg#clreg") format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: ChampLim;
+    src: url("../../fonts/CL/CLBold.eot");
+    src: url("../../fonts/CL/CLBold.eot?#iefix") format("embedded-opentype"), url("../../fonts/CL/CLBold.woff") format("woff"), url("../../fonts/CL/CLBold.ttf") format("truetype"), url("../../fonts/CL/CLBold.svg#clbold") format("svg");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url("../../fonts/Lato/Lato-Regular.eot");
+    src: url("../../fonts/Lato/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/Lato/Lato-Regular.woff") format("woff"), url("../../fonts/Lato/Lato-Regular.ttf") format("truetype"), url("../../fonts/Lato/Lato-Regular.svg#latoreg") format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url("../../fonts/Lato/Lato-Bold.eot");
+    src: url("../../fonts/Lato/Lato-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/Lato/Lato-Bold.woff") format("woff"), url("../../fonts/Lato/Lato-Bold.ttf") format("truetype"), url("../../fonts/Lato/Lato-Bold.svg#latobold") format("svg");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url("../../fonts/Lato/Lato-Black.eot");
+    src: url("../../fonts/Lato/Lato-Black.eot?#iefix") format("embedded-opentype"), url("../../fonts/Lato/Lato-Black.woff") format("woff"), url("../../fonts/Lato/Lato-Black.ttf") format("truetype"), url("../../fonts/Lato/Lato-Black.svg#latoblack") format("svg");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: HoneyScript;
+    src: url("../../fonts/HS/HSLight.eot");
+    src: url("../../fonts/HS/HSLight.eot?#iefix") format("embedded-opentype"), url("../../fonts/HS/HSLight.woff") format("woff"), url("../../fonts/HS/HSLight.ttf") format("truetype"), url("../../fonts/HS/HSLight.svg#hslight") format("svg");
+    font-weight: 900;
+    font-style: normal;
+}

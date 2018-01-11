@@ -1,0 +1,26 @@
+@font-face {
+    font-family: FiraSans;
+    src: url("../../fonts/FiraSans/Light/FiraSans-Light.eot");
+    src: url("../../fonts/FiraSans/Light/FiraSans-Light.eot?#iefix") format("embedded-opentype"), url("../../fonts/FiraSans/Light/FiraSans-Light.woff") format("woff"), url("../../fonts/FiraSans/Light/FiraSans-Light.ttf") format("truetype"), url("../../fonts/FiraSans/Light/FiraSans-Light.svg#firasanslight") format("svg");
+
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: FiraSans;
+    src: url("../../fonts/FiraSans/Medium/FiraSans-Medium.eot");
+    src: url("../../fonts/FiraSans/Medium/FiraSans-Medium.eot?#iefix") format("embedded-opentype"), url("../../fonts/FiraSans/Medium/FiraSans-Medium.woff") format("woff"), url("../../fonts/FiraSans/Medium/FiraSans-Medium.ttf") format("truetype"), url("../../fonts/FiraSans/Medium/FiraSans-Medium.svg#firasansmedium") format("svg");
+
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: FiraSans;
+    src: url("../../fonts/FiraSans/Regular/FiraSans-Regular.eot");
+    src: url("../../fonts/FiraSans/Regular/FiraSans-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/FiraSans/Regular/FiraSans-Regular.woff") format("woff"), url("../../fonts/FiraSans/Regular/FiraSans-Regular.ttf") format("truetype"), url("../../fonts/FiraSans/Regular/FiraSans-Regular.svg#firasansregular") format("svg");
+
+    font-weight: 500;
+    font-style: normal;
+}

@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #FFF;
+}
+
+.clr {
+    clear: both;
+    width: 100%;
+}
+
+.transparent {
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.portfolio-wrapper {
+    width: 100%;
+    min-height: 100%;
+    margin-bottom: -72px;
+}
+
+.portfolio-wrapper:after {
+    content: "";
+    height: 72px;
+    display: block;
+}
+
+.portfolio-container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.transparent {
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}

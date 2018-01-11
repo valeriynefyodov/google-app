@@ -1,0 +1,16 @@
+.portfolio-footer {
+    height: 72px;
+    background-color: #212121;
+    width: 100%;
+}
+
+.portfolio-footer_text {
+    font-family: FiraSans;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    text-align: center;
+    color:  #FFF;
+    transform: scaleY(1.0054);
+    padding: 19px 345px 0 345px;
+}

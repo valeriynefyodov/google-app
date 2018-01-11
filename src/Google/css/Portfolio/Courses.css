@@ -1,0 +1,9 @@
+.portfolio-courses {
+    margin-top: 75px;
+    padding: 77px 0 80px 0;
+    background: url('../../img/Portfolio/courses_bg.png') fixed;
+}
+
+.portfolio-courses-container {
+    padding: 0 130px;
+}

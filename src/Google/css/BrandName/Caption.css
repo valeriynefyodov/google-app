@@ -1,0 +1,19 @@
+.brandname-caption {
+    text-align: center;
+}
+
+.brandname-caption__title {
+    font-family: Lato;
+    font-weight: 900;
+    font-size: 40px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 175px;
+}
+
+.brandname-caption__subtitle {
+    font-family: HoneyScript;
+    font-size: 50px;
+    color: #ffffff;
+}

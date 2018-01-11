@@ -1,0 +1,34 @@
+.brandname-feedback {
+    width: 260px;
+    padding: 30px 20px 47px 20px;
+    background-color: #f9f8f8;
+    position: relative;
+    margin-bottom: 110px;
+    margin-left: 80px;
+    float: left;
+}
+
+.brandname-feedback::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #dedddd;
+    border: 5px solid #FFF;
+    border-radius: 50%;
+    bottom: -30px;
+    right: 0;
+}
+
+.brandname-feedback__text {
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 16px;
+    color: #909090;
+}
+
+.brandname-feedback__username {
+    font-weight: 700;
+    font-size: 13px;
+    color: #7e7d7d;
+}

@@ -1,0 +1,31 @@
+.portfolio-header-personal {
+    float: left;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+.portfolio-header-personal__name  {
+    font-family: FiraSans;
+    font-weight: 500;
+    color: #FFF;
+    font-size: 21px;
+    line-height: 21px;
+    transform: scaleY(1.0145);
+    text-align: left;
+}
+
+.portfolio-header-personal__mail {
+    font-family: FiraSans;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 28px;
+    color: #FFF;
+    transform: scaleY(1.0145);
+    margin-top: 1px;
+    text-decoration: none
+}
+
+.portfolio-header-personal__mail:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}

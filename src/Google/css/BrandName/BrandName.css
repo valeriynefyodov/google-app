@@ -1,0 +1,54 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.brandname-wrapper {
+    width: 100%;
+    min-width: 1500px;
+    min-height: 100%;
+    margin-bottom: -415px;
+}
+
+.brandname-wrapper:after {
+    content: '';
+    display: block;
+    height: 415px;
+}
+
+.brandname-container {
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.brandname-billboard {
+    background-image: url('../../img/BrandName/base-image.png');
+    background-color: #eca151;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+}

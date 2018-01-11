@@ -1,0 +1,11 @@
+.content {
+    text-align: center;
+    width: 664px;
+    margin: 0 auto;
+}
+
+.content__logo {
+    width: 272px;
+    height: 92px;
+    padding-top: 112px;
+}

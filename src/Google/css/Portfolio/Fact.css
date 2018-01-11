@@ -1,0 +1,53 @@
+.student-fact {
+    float: left;
+    width: 436px;
+}
+
+.student-fact:nth-child(2n) {
+    margin-left: 129px;
+    margin-right: 45px;
+}
+
+.student-fact__image {
+    background-image: url("../../img/Portfolio/tudent_sprite.png");
+    width: 140px;
+    height: 140px;
+    float: left;
+    margin-right: 21px;
+}
+
+.student-fact__image_hello {
+    background-position: 0px 0px;
+}
+
+.student-fact__image_exp {
+    background-position: -140px 0px;
+}
+
+.student-fact__title {
+    font-family: FiraSans;
+    overflow: hidden;
+    color: #212121;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.student-fact__content {
+    font-family: FiraSans;
+    overflow: hidden;
+    color: #727272;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    text-align: left;
+    margin-top: 7px;
+}
+
+.student-fact__link {
+    color: #03a9f4;
+}
+
+.student-fact__link:hover {
+    color: #03a9f4;
+}
