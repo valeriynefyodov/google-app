@@ -1,6 +1,6 @@
 # google-app
 
-Initialize app via `npm init -y`
+Initialize app via `npm install`
 
 You should start a HTTP-server to handle app's requests. It uses node's `http-server` module.<br>
 In `SimpleHTTPService/`\:
