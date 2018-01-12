@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../../css/Portfolio/Portfolio.css';
-import '../../css/Portfolio/Fonts.css';
 
 import Header from "../Components/Portfolio/Header";
 import Student from "../Components/Portfolio/Student";

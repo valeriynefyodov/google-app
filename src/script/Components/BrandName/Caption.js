@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/BrandName/Caption.css';
 
 class Caption extends Component {
     render() {

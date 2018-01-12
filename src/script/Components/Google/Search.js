@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/Google/Search.css';
-import '../../../img/Google/Google_mic.svg.png'
 
 class Search extends Component {
     render () {

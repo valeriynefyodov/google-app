@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/Portfolio/Portfolio.css';
-import '../../../css/Portfolio/Course.css';
 
 import * as PortfolioActions from "../../Actions/PortfolioActions";
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import '../../../css/Google/Recent.css';
 
 import Tab from './Tab';
 

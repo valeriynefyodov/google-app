@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/Portfolio/Portfolio.css';
-import '../../../css/Portfolio/Courses.css';
 import portfolioStore from '../../Stores/PortfolioStore';
 import * as PortfolioActions from '../../Actions/PortfolioActions';
 

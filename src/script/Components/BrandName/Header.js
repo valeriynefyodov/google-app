@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/BrandName/Header.css';
 import Logo from "./Logo";
 import Menu from "./Menu";
 

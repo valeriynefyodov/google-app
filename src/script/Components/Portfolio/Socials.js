@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/Portfolio/Portfolio.css';
-import '../../../css/Portfolio/Socials.css';
 
 class Socials extends Component {
     render() {

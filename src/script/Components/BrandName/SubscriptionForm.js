@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/BrandName/SubscriptionForm.css';
 import brandnameStore from '../../Stores/BrandNameStore';
 import * as BrandNameActions from '../../Actions/BrandNameActions';
 

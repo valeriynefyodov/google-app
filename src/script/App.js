@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import 'path-to-regexp';
 
-import Google from './Google/script/Pages/Google.js';
-import Mail from './Google/script/Pages/Mail';
-import Images from './Google/script/Pages/Images';
-import TabRouter from './Google/script/Pages/TabRenderer';
-import Portfolio from "./Google/script/Pages/Portfolio";
-import BrandName from "./Google/script/Pages/BrandName";
+import Google from './Pages/Google.js';
+import Mail from './Pages/Mail';
+import Images from './Pages/Images';
+import TabRouter from './Pages/TabRenderer';
+import Portfolio from "./Pages/Portfolio";
+import BrandName from "./Pages/BrandName";
 
 class App extends Component {
     render () {

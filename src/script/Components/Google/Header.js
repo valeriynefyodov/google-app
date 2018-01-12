@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import '../../../css/Google/Header.css';
-import '../../../fonts/FontAwesome/css/font-awesome.min.css'
 
 class Header extends Component {
     render() {

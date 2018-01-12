@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/BrandName/Feedback.css';
 
 class Feedback extends Component {
 

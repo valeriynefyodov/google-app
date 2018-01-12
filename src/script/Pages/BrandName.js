@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../../css/BrandName/BrandName.css';
-import '../../css/BrandName/Fonts.css';
 
 import Header from "../Components/BrandName/Header";
 import Caption from "../Components/BrandName/Caption";

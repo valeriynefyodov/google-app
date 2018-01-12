@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../css/Google/Google.css';
 
 import Header from '../Components/Google/Header';
 import Content from '../Components/Google/Content';
@@ -7,7 +6,7 @@ import Content from '../Components/Google/Content';
 class Google extends Component {
     render () {
         return (
-            <div className='brandname-wrapper'>
+            <div className='wrapper'>
                 <Header/>
                 <Content/>
             </div>

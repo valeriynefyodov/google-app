@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/Portfolio/Student.css';
 
 import BlockTitle from "./BlockTitle";
 import Fact from "./Fact";

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import brandnameStore from '../../Stores/BrandNameStore';
-import '../../../css/BrandName/Logo.css';
 
 class Logo extends Component {
     constructor(props) {

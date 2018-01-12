@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/BrandName/CallToAction.css';
-import BrowserImage from '../../../img/BrandName/browser_image.png';
 import BlockTitle from "./BlockTitle";
 
 class CallToAction extends Component {
@@ -9,7 +7,7 @@ class CallToAction extends Component {
             <section className='brandname-call-to-action clearfix'>
                 <div className='brandname-container'>
                     <figure>
-                        <img className='brandname-call-to-action__browser-image' src={BrowserImage} alt=""/>
+                        <img className='brandname-call-to-action__browser-image' src='img/BrandName/browser_image.png' alt=""/>
                     </figure>
 
                     <BlockTitle place='callToAction'/>

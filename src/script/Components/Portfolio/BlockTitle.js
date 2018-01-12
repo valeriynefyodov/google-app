@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/Portfolio/BlockTitle.css';
 
 class BlockTitle extends Component {
     render() {

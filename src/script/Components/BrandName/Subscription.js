@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../../css/BrandName/Subscription.css';
 import BlockTitle from "./BlockTitle";
 import SubscriptionForm from "./SubscriptionForm";
 

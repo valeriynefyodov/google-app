@@ -1,7 +1,5 @@
 import { EventEmitter } from 'events';
 
-import HeaderImg from '../../img/BrandName/header_logo.png';
-import FooterImg from '../../img/BrandName/footer_logo.png';
 import Dispatcher from "../Dispatcher";
 
 class BrandNameStore extends EventEmitter {
@@ -15,13 +13,13 @@ class BrandNameStore extends EventEmitter {
                 containerClass: 'header-logo',
                 imgClass: 'header-logo__img',
                 nameClass: 'header-logo__name',
-                imgSrc: HeaderImg
+                imgSrc: 'img/BrandName/header_logo.png'
             },
             footer: {
                 containerClass: '',
                 imgClass: 'footer-logo__img',
                 nameClass: 'footer-logo__name',
-                imgSrc: FooterImg
+                imgSrc: 'img/BrandName/footer_logo.png'
             }
         };
 

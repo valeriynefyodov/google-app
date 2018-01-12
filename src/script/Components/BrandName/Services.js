@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import brandnameStore from '../../Stores/BrandNameStore';
-import '../../../css/BrandName/Services.css';
 
 import Service from "./Service";
 

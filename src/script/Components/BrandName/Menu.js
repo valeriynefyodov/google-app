@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import brandnameStore from '../../Stores/BrandNameStore';
-import '../../../css/BrandName/Menu.css';
 
 class Menu extends Component {
     constructor(props) {

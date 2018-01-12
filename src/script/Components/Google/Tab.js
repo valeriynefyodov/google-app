@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../../../css/Google/Tab.css';
 
 const HOST = 'http://192.168.1.30:8088';
 
