@@ -11,6 +11,12 @@ import Footer from "../Components/BrandName/Footer";
 import Subscription from "../Components/BrandName/Subscription";
 
 class BrandName extends Component {
+
+    // componentWillMount() {
+    //     this.brandnameStore = new BrandNameStore();
+    //     Dispatcher.register(this.brandnameStore.handleActions.bind(this.brandnameStore));
+    // }
+
     render() {
         return (
             <div>

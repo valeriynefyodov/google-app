@@ -1,35 +1,12 @@
 import React, { Component } from 'react';
+import brandnameStore from '../../Stores/BrandNameStore';
 import '../../../css/BrandName/Menu.css';
 
 class Menu extends Component {
     constructor(props) {
         super(props);
 
-        if (this.props.place === 'header')
-            this.state = {
-                containerClass: 'header-menu',
-                itemClass: 'header-menu__item',
-                items: [
-                    'Home',
-                    'Services',
-                    'About Us',
-                    'Blog',
-                    'Contact Us'
-                ]
-            };
-        else if (this.props.place === 'footer')
-            this.state = {
-                containerClass: 'footer-menu',
-                itemClass: 'footer-menu__item',
-                items: [
-                    'Company',
-                    'Location',
-                    'Help',
-                    'Advertise',
-                    'Terms',
-                    'Privacy'
-                ]
-            };
+        this.state = brandnameStore.getMenuData(this.props.place);
     }
 
     render() {

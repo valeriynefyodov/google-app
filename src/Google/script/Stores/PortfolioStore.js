@@ -1,23 +1,11 @@
 import { EventEmitter } from 'events';
-import $ from 'jquery'
-
-const HOST = 'http://192.168.1.30:8088';
+import Dispatcher from "../Dispatcher";
 
 class PortfolioStore extends EventEmitter {
     constructor() {
         super();
 
         this.coursesList = [];
-        this.loadCourses();
-    }
-
-    loadCourses() {
-        $.getJSON(HOST + '/courses.json').then((data) => {
-            data.forEach((item) => {
-                this.coursesList.push($.extend({}, {id:  Math.floor(Math.random() * (9999 - 1000)) + 1000}, item))
-            });
-            this.emit('data changed');
-        });
     }
 
     getAllCourses() {
@@ -45,12 +33,18 @@ class PortfolioStore extends EventEmitter {
                 this.deleteCourse(action.id);
                 break;
 
+            case 'RECEIVE_COURSES':
+                this.coursesList = action.courses;
+                this.emit('data changed');
+                break;
+
             default:
                 break;
         }
     }
 }
 
-// const portfolioStore = new PortfolioStore();
-// Dispatcher.register(portfolioStore.handleActions.bind(portfolioStore));
-export default PortfolioStore;
+const portfolioStore = new PortfolioStore();
+Dispatcher.register(portfolioStore.handleActions.bind(portfolioStore));
+
+export default portfolioStore;

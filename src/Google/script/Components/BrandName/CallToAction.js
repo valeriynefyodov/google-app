@@ -11,7 +11,9 @@ class CallToAction extends Component {
                     <figure>
                         <img className='brandname-call-to-action__browser-image' src={BrowserImage} alt=""/>
                     </figure>
-                    <BlockTitle class='brandname-call-to-action__title' title='We Design Beautiful Templates'/>
+
+                    <BlockTitle place='callToAction'/>
+
                     <p className='brandname-call-to-action__text'>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore euna fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in pel culpa qui officia deserunt mollit anim id est laborum.</p>
                     <input type='button' className='brandname-call-to-action__button' value='sign up now!'/>
                 </div>

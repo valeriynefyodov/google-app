@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../../../css/Portfolio/Portfolio.css';
 import '../../../css/Portfolio/Courses.css';
-// import PortfolioStore from '../../Stores/PortfolioStore';
+import portfolioStore from '../../Stores/PortfolioStore';
+import * as PortfolioActions from '../../Actions/PortfolioActions';
 
 import BlockTitle from "./BlockTitle";
 import Course from "./Course";
@@ -19,17 +20,21 @@ class Courses extends Component {
 
     updateCoursesList() {
         this.setState({
-            coursesList: this.props.portfolioStore.getAllCourses()
+            coursesList: portfolioStore.getAllCourses()
         });
     }
 
     componentWillMount() {
-        this.props.portfolioStore.on('data changed', this.updateCoursesList);
-        this.updateCoursesList();
+        portfolioStore.on('data changed', this.updateCoursesList);
+        // this.updateCoursesList();
+    }
+
+    componentDidMount() {
+        PortfolioActions.loadCourses();
     }
 
     componentWillUnmount() {
-        this.props.portfolioStore.removeListener('data changed', this.updateCoursesList);
+        portfolioStore.removeListener('data changed', this.updateCoursesList);
     }
 
     render() {
