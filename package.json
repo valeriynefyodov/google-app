@@ -1,10 +1,14 @@
 {
   "name": "google-app",
-  "version": "0.0.1",
+  "version": "0.2.7",
   "description": "Training app",
   "author": "Valeriy Nefyodov",
   "license": "ISC",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valeriynefyodov/google-app.git"
+  },
   "scripts": {
     "build": "gulp build",
     "dev": "gulp dev"
@@ -27,14 +31,20 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "browser-sync": "^2.23.5",
+    "connect-history-api-fallback": "^1.5.0",
     "css-loader": "^0.28.8",
     "del": "^3.0.0",
     "file-loader": "^1.1.6",
     "font-loader": "^0.1.2",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-change": "^1.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-concat-multi": "^1.0.1",
     "gulp-css-url-adjuster": "^0.2.3",
+    "gulp-filechange": "^1.0.0",
+    "gulp-foreach": "^0.1.0",
+    "gulp-if-else": "^1.0.3",
+    "gulp-sourcemaps": "^2.6.3",
+    "gulp-tap": "^1.0.1",
     "gulp-util": "^3.0.8",
     "path": "^0.12.7",
     "webpack": "^3.10.0"
