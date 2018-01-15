@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import HOST from '../../Settings';
 
 import Tab from './Tab';
 
-const HOST = 'http://192.168.1.30:8088';
+// const HOST = 'http://192.168.1.30:8088';
 
 class Recent extends Component {
 

@@ -1,7 +1,8 @@
 import Dispatcher from '../Dispatcher';
 import $ from "jquery";
+import HOST from '../Settings';
 
-const HOST = 'http://192.168.1.30:8088';
+// const HOST = 'http://192.168.1.30:8088';
 
 export function hideCourse(id) {
     Dispatcher.dispatch({

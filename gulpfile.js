@@ -73,5 +73,5 @@ gulp.task('serve', function(){
     gulp.watch('public/**/*.*').on('change', browserSync.reload);
 });
 
-gulp.task('build', gulp.series('clean', gulp.parallel('styles', 'webpack'), 'assets'));
+gulp.task('build', gulp.series('clean', 'assets', gulp.parallel('styles', 'webpack')));
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')));

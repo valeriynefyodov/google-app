@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import HOST from '../../Settings';
 
-const HOST = 'http://192.168.1.30:8088';
+// const HOST = 'http://192.168.1.30:8088';
 
 class Tab extends Component {
     render () {
