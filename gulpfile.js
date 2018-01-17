@@ -1,39 +1,63 @@
-const path        = require('path');
-const del         = require('del');
-const browserSync = require('browser-sync').create();
-const webpack     = require('webpack');
-const history     = require('connect-history-api-fallback');
+const path         = require('path');
+const del          = require('del');
+const browserSync  = require('browser-sync').create();
+const webpack      = require('webpack');
+const history      = require('connect-history-api-fallback');
+const fs           = require('fs');
+const mergeStreams =  require('merge-stream');
 
 const gulp       = require('gulp');
-const concat     = require('gulp-concat-multi');
+const concat     = require('gulp-concat');
 const cssUrlAdj  = require('gulp-css-url-adjuster');
 const sourcemaps = require('gulp-sourcemaps');
 const gutil      = require('gulp-util');
+
+const paths = {
+    assets: ['src/*.*', 'src/{img,fonts}/**/*.*'],
+    favicon: 'src/favicon.ico',
+    styles: 'src/css/',
+    scripts: 'src/script/',
+    build: 'public/'
+};
+
+function getFolders(dir) {
+    return fs.readdirSync(dir).filter((file) => {
+        return fs.statSync(path.join(dir, file)).isDirectory();
+    });
+}
 
 gulp.task('clean', function() {
     return del('public/**/');
 });
 
 gulp.task('styles', function() {
-    return concat({
-        'google.css': 'src/css/Google/*.css',
-        'brandname.css': 'src/css/BrandName/*.css',
-        'portfolio.css': 'src/css/Portfolio/*.css',
-        'images.css': 'src/css/Images/*.css',
-    })
+    let folders = getFolders(paths.styles);
+
+    let pagesStyles = folders.map((folder) => {
+        return gulp.src(path.join(paths.styles, folder, '/**/*.*'))
+            .pipe(sourcemaps.init())
+            .pipe(cssUrlAdj({
+                replace: ['../../', '../']
+            }))
+            .pipe(concat(folder.toLowerCase() + '.css'))
+            .pipe(sourcemaps.write())
+            .pipe(gulp.dest(path.join(paths.build, '/css')))
+    });
+
+    let mainStyles = gulp.src(path.join(paths.styles, '/*.css'))
         .pipe(sourcemaps.init())
-        .pipe(cssUrlAdj({
-            replace: ['../../', '../']
-        }))
+        .pipe(concat('main.css'))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('public/css/'));
+        .pipe(gulp.dest(path.join(paths.build, '/css')));
+
+    return mergeStreams(pagesStyles, mainStyles);
 });
 
 gulp.task('assets', function () {
-    return gulp.src(['src/{img,fonts}/**/*.*', 'src/favicon.ico', 'src/index.html'])
+    return gulp.src(paths.assets)
         .pipe(gulp.dest(function(file) {
             file.base = 'src/';
-            return 'public/'
+            return paths.build
         }));
 });
 
@@ -47,26 +71,20 @@ gulp.task('webpack', function(callback) {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['src/{img,fonts}/**/*.*', 'src/favicon.ico', 'src/index.html'], gulp.series('assets'));
-    gulp.watch('src/css/**/*.css', gulp.series('styles'));
+    gulp.watch(paths.assets, gulp.series('assets'));
+    gulp.watch(path.join(paths.styles, '/**/*.css'), gulp.series('styles'));
 });
 
 gulp.task('serve', function(){
     browserSync.init({
         server: {
-            baseDir: './public/',
+            baseDir: paths.build,
             middleware: history({})
         }
     });
 
-    browserSync.watch('public/**/*.*').on('change', browserSync.reload);
+    browserSync.watch(path.join(paths.build, '/**/*.*')).on('change', browserSync.reload);
 });
 
 gulp.task('build', gulp.series('clean', 'assets', gulp.parallel('styles', 'webpack')));
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')));
-
-gulp.task('styles:test', gulp.series('clean', 'stylesDev'));
-
-// let relDirName = file.dirname.split(path.sep);
-// filename = relDirName[relDirName.length - 1].toLowerCase();
-// gutil.log(filename);
