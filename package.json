@@ -37,6 +37,7 @@
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-concat": "^2.6.1",
     "gulp-css-url-adjuster": "^0.2.3",
+    "gulp-inject": "^4.3.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
     "gulp-sourcemaps": "^2.6.3",

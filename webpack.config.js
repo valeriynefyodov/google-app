@@ -1,18 +1,10 @@
 const path = require('path');
-// import paths from './gulpfile';
-
-const paths = {
-    assets: ['src/*.*', 'src/{img,fonts}/**/*.*'],
-    favicon: 'src/favicon.ico',
-    styles: 'src/css/',
-    scripts: 'src/script/',
-    build: 'public/'
-};
+const paths = require('./gulpfile').paths;
 
 module.exports = {
-    entry: path.resolve(__dirname, path.join(paths.scripts, '/index.js')),
+    entry: path.resolve(__dirname, path.join(paths.scripts.src, 'index.js')),
     output: {
-        path: path.resolve(__dirname,  path.join(paths.build, '/js/')),
+        path: path.resolve(__dirname,  paths.scripts.dest),
         filename: 'bundle.js'
     },
     watch: true,
@@ -22,7 +14,7 @@ module.exports = {
             {
                 test: /.jsx?$/,
                 loader: 'babel-loader',
-                exclude: [path.resolve(__dirname, "node_modules")],
+                exclude: [path.resolve(__dirname, 'node_modules')],
                 query: {
                     presets: ['es2015', 'react']
                 }
