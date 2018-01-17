@@ -11,6 +11,8 @@ const concat     = require('gulp-concat');
 const cssUrlAdj  = require('gulp-css-url-adjuster');
 const sourcemaps = require('gulp-sourcemaps');
 const gutil      = require('gulp-util');
+const plumber    = require('gulp-plumber');
+const notify     = require('gulp-notify');
 
 const paths = {
     assets: ['src/*.*', 'src/{img,fonts}/**/*.*'],
@@ -35,6 +37,7 @@ gulp.task('styles', function() {
 
     let pagesStyles = folders.map((folder) => {
         return gulp.src(path.join(paths.styles, folder, '/**/*.*'))
+            .pipe(plumber({errorHandler: notify.onError()}))
             .pipe(sourcemaps.init())
             .pipe(cssUrlAdj({
                 replace: ['../../', '../']
@@ -45,6 +48,7 @@ gulp.task('styles', function() {
     });
 
     let mainStyles = gulp.src(path.join(paths.styles, '/*.css'))
+        .pipe(plumber({errorHandler: notify.onError()}))
         .pipe(sourcemaps.init())
         .pipe(concat('main.css'))
         .pipe(sourcemaps.write())
@@ -55,6 +59,7 @@ gulp.task('styles', function() {
 
 gulp.task('assets', function () {
     return gulp.src(paths.assets)
+        .pipe(plumber({errorHandler: notify.onError()}))
         .pipe(gulp.dest(function(file) {
             file.base = 'src/';
             return paths.build

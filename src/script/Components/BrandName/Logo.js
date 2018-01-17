@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import brandnameStore from '../../Stores/BrandNameStore';
 
 class Logo extends Component {
@@ -11,12 +13,12 @@ class Logo extends Component {
     render() {
         return (
             <div className={this.state.containerClass}>
-                <a href="">
+                <Link to='/'>
                     <figure>
                         <img className={this.state.imgClass} src={this.state.imgSrc} alt=""/>
                     </figure>
                     <h4 className={this.state.nameClass}><span>Brand</span> Name</h4>
-                </a>
+                </Link>
             </div>
         );
     }
