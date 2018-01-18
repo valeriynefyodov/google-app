@@ -18,29 +18,34 @@ const rename      = require('gulp-rename');
 const notify      = require('gulp-notify');
 const gulpif      = require('gulp-if');
 const spritesmith = require('gulp.spritesmith');
+const change      = require('gulp-change');
 
 const root = {
     src: 'src/',
-    dest: !!util.env.production ? 'production/' : 'dev/'
+    dest: {
+        public: !!util.env.production ? 'production/public/' : 'dev/',
+        private: !!util.env.production ? 'production/' : 'dev/',
+    }
 };
 
 const paths = {
     styles: {
         src: path.join(root.src, 'css/'),
-        dest: path.join(root.dest, 'css/')
+        dest: path.join(root.dest.public, 'css/')
     },
     assets: {
         src: [path.join(root.src, '*.*'), path.join(root.src, 'img/**/static/*.*'), path.join(root.src, 'fonts/**/*.*')],
-        dest: path.join(root.dest)
+        dest: path.join(root.dest.public)
     },
     scripts: {
         src: path.join(root.src, 'script/'),
-        dest: path.join(root.dest, 'js/')
+        dest: path.join(root.dest.public, 'js/')
     },
     images: {
         src: path.join(root.src, 'img/'),
-        dest: path.join(root.dest, 'img/')
-    }
+        dest: path.join(root.dest.public, 'img/')
+    },
+    sourceMaps: path.join(root.dest.private , 'source-maps/')
 };
 
 exports.paths = paths;
@@ -58,11 +63,23 @@ function getFolders(dir) {
 }
 
 gulp.task('clean', function() {
-    return del(path.join(root.dest, '/**/'));
+    return del([path.join(root.dest.public, '/**/'), path.join('./', root.dest.private, '**/source-maps/**/*.*')]);
 });
 
 gulp.task('clean:mess', function () {
-    return del(path.join(paths.styles.dest, '*-sprite.css'));
+    return del([
+        path.join(paths.styles.dest, '*-sprite.css'),
+        path.join(root.dest.public, '**/*.map')
+    ]);
+});
+
+gulp.task('source-maps:relocate', function() {
+    return gulp.src(path.join(root.dest.public, '**/*.map'), {allowEmpty: true})
+            .pipe(gulp.dest(function(file) {
+            file.dirname = paths.sourceMaps;
+            file.base = paths.sourceMaps;
+            return paths.sourceMaps
+        }));
 });
 
 gulp.task('sprites', function() {
@@ -99,7 +116,7 @@ gulp.task('sprites', function() {
         .pipe(plumber({
             errorHandler: notify.onError(function (error) {
                 return {
-                    title: 'Error: '+ folder +' sprite',
+                    title: 'Error: Main sprite',
                     message: error.message
                 }
             })
@@ -142,7 +159,10 @@ gulp.task('styles', function() {
             }))
             .pipe(concat(folder.toLowerCase() + '.css'))
             .pipe(gulpif(production, cleanCSS()))
-            .pipe(sourcemaps.write())
+            .pipe(gulpif(production, sourcemaps.write('./'), sourcemaps.write()))
+            .pipe(change(function(content) {
+                return content.replace(/\bsourceMappingURL=\b/g, 'sourceMappingURL=' + paths.sourceMaps);
+            }))
             .pipe(gulpif(production, rename({suffix: '.min'})))
             .pipe(gulp.dest(paths.styles.dest))
     });
@@ -159,7 +179,7 @@ gulp.task('styles', function() {
         .pipe(sourcemaps.init())
         .pipe(concat('main.css'))
         .pipe(gulpif(production, cleanCSS()))
-        .pipe(sourcemaps.write())
+        .pipe(gulpif(production, sourcemaps.write('./'), sourcemaps.write()))
         .pipe(gulpif(production, rename({suffix: '.min'})))
         .pipe(gulp.dest(paths.styles.dest));
 
@@ -186,15 +206,15 @@ gulp.task('assets', function () {
             }
 
             file.base = root.src;
-            return root.dest
+            return root.dest.public
         }));
 });
 
 gulp.task('inject', function() {
     let sources = gulp.src([path.join(paths.scripts.dest, '**/*.js'), path.join(paths.styles.dest, '**/*.css'), '!' + path.join(paths.styles.dest, '**/*-sprite.css')], {read: false});
 
-    return gulp.src(path.join(root.dest, 'index.html'))
-        .pipe(inject(sources, {ignorePath: root.dest, addRootSlash: false}))
+    return gulp.src(path.join(root.dest.public, 'index.html'))
+        .pipe(inject(sources, {ignorePath: root.dest.public, addRootSlash: false}))
         .pipe(gulp.dest('./'));
 });
 
@@ -209,7 +229,10 @@ gulp.task('webpack', function() {
             })
         }))
         .pipe(webpack(webpackConfig))
-        .pipe(gulpif(production, rename({suffix: '.min'})))
+        .pipe(change(function(content) {
+            return content.replace(/\bsourceMappingURL=\b/g, 'sourceMappingURL=' + paths.sourceMaps);
+        }))
+        .pipe(gulpif(production, gulpif('*.js', rename({suffix: '.min'}))))
         .pipe(gulp.dest(paths.scripts.dest))
 });
 
@@ -222,14 +245,14 @@ gulp.task('watch', function() {
 gulp.task('serve', function() {
     browserSync.init({
         server: {
-            baseDir: root.dest,
+            baseDir: root.dest.public,
             middleware: history({})
         }
     });
 
-    browserSync.watch(path.join(root.dest, '/**/*.*')).on('change', browserSync.reload);
+    browserSync.watch(path.join(root.dest.public, '/**/*.*')).on('change', browserSync.reload);
 });
 
-gulp.task('build', gulp.series('clean', gulp.parallel('assets', gulp.series('sprites', 'styles'), 'webpack'), 'inject', 'clean:mess'));
+gulp.task('build', gulp.series('clean', gulp.parallel('assets', gulp.series('sprites', 'styles'), 'webpack'), 'inject', 'source-maps:relocate', 'clean:mess'));
 
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')));

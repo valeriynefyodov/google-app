@@ -7,8 +7,6 @@ module.exports = {
         path: path.resolve(__dirname,  paths.scripts.dest),
         filename: 'bundle.js'
     },
-    watch: false,
-    devtool: 'inline-source-map',
     module: {
         loaders: [
             {

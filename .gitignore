@@ -10,6 +10,7 @@ node_modules/**/*.*
 # production
 dev/**/*.*
 production/**/*.*
+source-maps/**/*.*
 
 # misc
 .DS_Store
