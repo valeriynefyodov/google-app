@@ -9,20 +9,21 @@
 }
 
 .student-fact__image {
-    background-image: url("../../img/Portfolio/tudent_sprite.png");
     width: 140px;
     height: 140px;
     float: left;
     margin-right: 21px;
+
+    /*background-image: url("../../img/Portfolio/student_sprite.png");*/
 }
 
-.student-fact__image_hello {
+/*.student-fact__image_hello {
     background-position: 0px 0px;
 }
 
 .student-fact__image_exp {
     background-position: -140px 0px;
-}
+}*/
 
 .student-fact__title {
     font-family: FiraSans;

@@ -45,13 +45,13 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.3",
     "gulp-util": "^3.0.8",
+    "gulp.spritesmith": "^6.9.0",
     "merge-stream": "^1.0.1",
     "path": "^0.12.7",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "webpack": "^3.10.0",
     "webpack-merge": "^4.1.1",
-    "webpack-stream": "^4.0.0",
-    "yargs": "^10.1.1"
+    "webpack-stream": "^4.0.0"
   },
   "optionalDependencies": {}
 }

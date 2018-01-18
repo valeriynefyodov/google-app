@@ -51,19 +51,19 @@ class BrandNameStore extends EventEmitter {
 
         this.servicesData = [
             {
-                imageClass: 'brandname-service__img_cup',
+                imageClass: 'brandname__sprite_cup',
                 title: 'Duis Aute Irure',
                 subtitle: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur.',
                 isDecor: true
             },
             {
-                imageClass: 'brandname-service__img_crown',
+                imageClass: 'brandname__sprite_crown',
                 title: 'Duis Aute Irure',
                 subtitle: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur.',
                 isDecor: true
             },
             {
-                imageClass: 'brandname-service__img_scroll',
+                imageClass: 'brandname__sprite_scroll',
                 title: 'Duis Aute Irure',
                 subtitle: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur.',
                 isDecor: false

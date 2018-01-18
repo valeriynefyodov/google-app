@@ -31,6 +31,6 @@
     margin: 0 12px;
     top: 0;
     right: 0;
-    background: url('../../img/Google/Google_mic_small.png') center no-repeat;
+    background: url('../../img/Google/static/voice-search.png') center no-repeat;
     cursor: pointer;
 }

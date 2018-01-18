@@ -9,7 +9,7 @@ class Header extends Component {
                 <Link to='/images' className='header__link'>Картинки</Link>
                 <i className="fa fa-bars header__icon" aria-hidden="true" />
                 <i className="fa fa-bell header__icon" aria-hidden="true" />
-                <img className='header__avatar' src='http://192.168.1.30:8088/img/avatar.png' alt=''/>
+                <img className='header__avatar' src='http://192.168.1.30:8080/img/avatar.png' alt=''/>
             </div>
         );
     }

@@ -4,7 +4,7 @@ class Service extends Component {
 
     componentWillMount() {
         if(this.props.data.isDecor)
-            this.decor = <img className={`brandname-services__decoration ${this.props.data.imageClass}`} src='img/BrandName/decor.png' alt=""/>;
+            this.decor = <img className={`brandname-services__decoration`} src='img/BrandName/decor.png' alt=""/>;
          else
              this.decor = null;
     }
