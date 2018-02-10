@@ -6,7 +6,7 @@ const fs           = require('fs');
 const mergeStreams = require('merge-stream');
 
 const gulp        = require('gulp');
-const util       = require('gulp-util');
+const util        = require('gulp-util');
 const concat      = require('gulp-concat');
 const cssUrlAdj   = require('gulp-css-url-adjuster');
 const sourcemaps  = require('gulp-sourcemaps');
